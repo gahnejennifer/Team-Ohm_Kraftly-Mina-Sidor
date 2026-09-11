@@ -1,14 +1,16 @@
 ## Vad introducerades?
 
-<!-- Kort beskrivning av den nya featuren. -->
+Added a multi-stage Dockerfile for the frontend.
 
 ## Varför?
 
-<!-- Vad ämnar den nya featuren att göra? -->
+The frontend is built with Node and then served with nginx.
+Only the built dist files are copied to the final image, so Node and node_modules are not included.
 
 ## Hur testar man?
 
-<!-- Steg för steg, så granskaren kan verifiera själv utan att fråga. -->
+- docker build -t kraftly-frontend .
+- Build completed successfully
 
 ## Checklista
 
