@@ -1,3 +1,11 @@
 node_modules
 dist
 .git
+.github
+cypress
+docs
+mock-api
+*.log
+.env
+.env.*
+!.env.example
