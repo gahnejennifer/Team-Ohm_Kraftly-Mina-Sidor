@@ -1,0 +1,18 @@
+services:
+  frontend:
+    build: .
+    ports:
+      - '8080:80'
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  api:
+    image: node:22-alpine
+    working_dir: /app
+    volumes:
+      - ./mock-api:/app
+    command: sh -c node server.js
+    ports:
+      - '4000:4000'
+    restart: unless-stopped
