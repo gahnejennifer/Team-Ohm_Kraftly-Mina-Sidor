@@ -1,6 +1,8 @@
 name: CI
 
 on:
+  push:
+    branches: [main]
   pull_request:
     branches: [main]
 
@@ -70,3 +72,15 @@ jobs:
         with:
           name: cypress-screenshots
           path: cypress/screenshots
+
+  image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Build Docker image
+        run: docker build -t kraftly-frontend .
+
+      - name: Show image size
+        run: docker image ls kraftly-frontend
