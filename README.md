@@ -1,19 +1,46 @@
 [![CI](https://github.com/vbystroem/Team-Ohm_Kraftly-Mina-Sidor/actions/workflows/ci.yaml/badge.svg)](https://github.com/vbystroem/Team-Ohm_Kraftly-Mina-Sidor/actions/workflows/ci.yaml)
 
-# kraftly-portal
+# Kraftly Mina Sidor
 
-Customer portal for Kraftly. Delivered by Webbmakarna AB 2026-06-30.
+Kundportal för Kraftly. Levereras av Webbmakarna AB.
 
 ## Getting started
 
-    npm install
-    npm start
+### Med Docker (rekommenderat)
 
-TODO: write proper documentation
+Kräver Docker och Docker Compose.
 
-# kraftly-mina-sidor
+```bash
+# Bygg och starta alla tjänster (frontend + mock-API)
+docker compose up --build
 
----
+# Portalen är tillgänglig på http://localhost:8080
+```
+
+### Utan Docker
+
+Kräver Node.js 22+.
+
+```bash
+# Installera beroenden
+npm install
+
+# Starta mock-API i en terminal
+npm run api
+
+# Starta frontend i en annan terminal
+npm run dev
+
+# Portalen är tillgänglig på http://localhost:5173
+```
+
+## Projektstruktur
+
+- `src/` – Vue.js-frontend
+- `mock-api/` – Mock-API för lokal utveckling
+- `nginx.conf` – Nginx-konfiguration för produktion
+- `Dockerfile` – Multi-stage build (Node → nginx)
+- `docker-compose.yml` – Lokal utvecklingsmiljö
 
 # Working agreement
 
