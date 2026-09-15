@@ -28,6 +28,9 @@ jobs:
         id: lint
         run: npm run lint
 
+      - name: Run Prettier format
+        run: npm run format
+
       - name: Run Prettier check
         id: prettier
         run: npm run format:check
