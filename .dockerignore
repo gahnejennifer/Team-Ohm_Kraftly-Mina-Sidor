@@ -4,8 +4,8 @@ dist
 .github
 cypress
 docs
-mock-api
 *.log
 .env
 .env.*
 !.env.example
+.env
