@@ -6,7 +6,7 @@ Kundportal för Kraftly. Levereras av Webbmakarna AB.
 
 ## Getting started
 
-### Med Docker (rekommenderat)
+### Lokalt Med Docker
 
 Kräver Docker och Docker Compose.
 
@@ -16,6 +16,18 @@ docker compose up --build
 
 # Portalen är tillgänglig på http://localhost:8080
 ```
+
+### Staging
+
+börja med att kopiera .env filen för att komma åt api nyckeln till staging-miljön
+
+```bash
+cp .env.example .env
+
+# Detta kopierar innehållet i .env.example till en ny .env fil som inte pushas upp till repot.
+```
+
+Gå in på https://kraftly-ohm-staging.onrender.com för att komma åt stagingmiljön
 
 ### Utan Docker
 
