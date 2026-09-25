@@ -23,4 +23,26 @@ describe('test validateMove', () => {
 
     expect(result).toStrictEqual(expected)
   })
+
+  it('should return invalid if address is only blank space', () => {
+    const moveForm = {
+      address: '   ',
+      zip: '80267',
+      city: 'Gävle',
+      date: '2026-10-01',
+      contract: 'Rörligt pris',
+    }
+
+    const expected = {
+      address: false,
+      zip: true,
+      city: true,
+      date: true,
+      contract: true,
+    }
+
+    const result = validateMove(moveForm, new Date())
+
+    expect(result).toStrictEqual(expected)
+  })
 })
